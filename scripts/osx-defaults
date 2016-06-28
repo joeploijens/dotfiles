@@ -64,6 +64,12 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.dai
 # Disable shadows on screen captures (default: not set).
 defaults write com.apple.screencapture disable-shadow -boolean true
 
+# Dashboard
+# ----------------------------------------------------------------------------
+
+# Disable Dashboard (default: not set).
+defaults write com.apple.dashboard mcx-disabled -boolean true
+
 # Dock
 # ----------------------------------------------------------------------------
 
