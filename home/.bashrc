@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#
 # ~/.bashrc
 #
 # Bash startup file for interactive non-login shells

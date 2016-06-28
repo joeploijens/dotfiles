@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#
 # ~/.bash_aliases
 
 # Make aliases work with `sudo`
