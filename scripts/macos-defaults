@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 #
-# osx-defaults
+# macos-defaults
 #
-# Set reasonable OS X defaults.
+# Set reasonable macOS defaults.
 #
-# Thanks to Mathias Bynens' OS X defaults script:
-# - https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+# Thanks to Mathias Bynens' macOS defaults script:
+# - https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 PROG=${0##*/}
 
-# OS X only...
+# macOS only...
 if [[ $(uname) != "Darwin" ]]
 then
-  echo "$PROG script is for OS X only!"
+  echo "$PROG script is for macOS only!"
   exit 1
 fi
 
-# OS X El Capitan only...
-if ! [[ $(sw_vers -productVersion) =~ ^10\.11\..+ ]]
+# macOS Sierra only...
+if ! [[ $(sw_vers -productVersion) =~ ^10\.12\..+ ]]
 then
-  echo "$PROG script is intended for OS X versions 10.11.x"
+  echo "$PROG script is intended for macOS versions 10.12.x"
   exit 1
 fi
 
@@ -48,10 +48,10 @@ defaults write NSGlobalDomain NSUseAnimatedFocusRing -boolean false
 # Save new documents to disk (not to iCloud) (default: not set).
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -boolean false
 
-# Reduce transparency in OS X.
+# Reduce transparency in macOS.
 defaults write com.apple.universalaccess reduceTransparency -boolean true
 
-# Report computer name, OS X version and IP address when clicking the clock
+# Report computer name, macOS version and IP address when clicking the clock
 # in the Login window (default: not set).
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
@@ -129,7 +129,7 @@ defaults write com.apple.Terminal "Startup Window Settings" -string "Solarized L
 # Google
 # ----------------------------------------------------------------------------
 
-# Use the OS X system-native print preview dialog (default: not set).
+# Use the macOS system-native print preview dialog (default: not set).
 defaults write com.google.Chrome DisablePrintPreview -boolean true
 
 # Disable Google Software Update from checking for updates (default: 18000).

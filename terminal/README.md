@@ -1,4 +1,4 @@
-# Solarized - OS X 10.11 Terminal.app Settings
+# Solarized - macOS 10.12 Terminal.app Settings
 
 A precision color scheme for multiple applications (terminal, vim, etc.) with
 both dark/light modes.

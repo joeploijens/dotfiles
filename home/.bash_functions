@@ -30,7 +30,7 @@ deletefiles() {
   find . -type f -name "$q" -ls -delete
 } 
 
-# Remove downloaded file(s) from the OS X quarantine
+# Remove downloaded file(s) from the macOS quarantine
 unquarantine() {
   local attribute
 
