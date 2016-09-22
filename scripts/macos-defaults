@@ -55,9 +55,6 @@ defaults write com.apple.universalaccess reduceTransparency -boolean true
 # in the Login window (default: not set).
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# Disable daily summary of power usage statistics.
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.daily.plist
-
 # Desktop & Screen Saver
 # ----------------------------------------------------------------------------
 
