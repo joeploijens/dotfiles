@@ -55,10 +55,13 @@ export TREE_COLORS=":no=00:fi=00:di=00;34:ln=00;35:pi=40;33:so=00;32:bd=46;34:cd
 # Prompt
 export PS1="\u@\h:\w$ "
 
+# Xcode developer directory
+DEVELOPER_DIR="$(xcode-select -p)"
+
 # Git prompt
-if [[ -f $(xcode-select -p)/usr/share/git-core/git-prompt.sh ]]
+if [[ -f $DEVELOPER_DIR/usr/share/git-core/git-prompt.sh ]]
 then
-  source $(xcode-select -p)/usr/share/git-core/git-prompt.sh
+  source $DEVELOPER_DIR/usr/share/git-core/git-prompt.sh
   GIT_PS1_SHOWDIRTYSTATE=1
   GIT_PS1_SHOWSTASHSTATE=1
   GIT_PS1_SHOWCOLORHINTS=1
@@ -70,20 +73,21 @@ then
 fi
 
 # Git bash completion
-if [[ -f $(xcode-select -p)/usr/share/git-core/git-completion.bash ]]
+if [[ -f $DEVELOPER_DIR/usr/share/git-core/git-completion.bash ]]
 then
-  source $(xcode-select -p)/usr/share/git-core/git-completion.bash
+  source $DEVELOPER_DIR/usr/share/git-core/git-completion.bash
 fi
 
 # Homebrew package manager
 if [[ -n $(command -v brew) ]]
 then
+  HOMEBREW_PREFIX="$(brew --prefix)"
   export HOMEBREW_TEMP=$TMPDIR
 
   # Homebrew's bash completion
-  if [[ -f $(brew --prefix)/etc/bash_completion.d/brew ]]
+  if [[ -f $HOMEBREW_PREFIX/etc/bash_completion.d/brew ]]
   then
-    source $(brew --prefix)/etc/bash_completion.d/brew
+    source $HOMEBREW_PREFIX/etc/bash_completion.d/brew
   fi
 
   # Homebrew Cask
@@ -92,7 +96,7 @@ then
   # Ruby version management: rbenv and ruby-build
   if [[ -n $(command -v rbenv) ]]
   then
-    export RBENV_ROOT=$(brew --prefix)/var/rbenv
+    export RBENV_ROOT=$HOMEBREW_PREFIX/var/rbenv
     export RUBY_CONFIGURE_OPTS="--disable-install-doc"
     eval "$(rbenv init -)"
   fi
@@ -101,8 +105,8 @@ then
   if [[ -n $(command -v sqlplus) ]]
   then
     export NLS_LANG=AMERICAN_AMERICA.UTF8
-    export SQLPATH=$(brew --prefix)/opt/instant-client/sqlplus/admin:$HOME/local/sqlplus
-    export TNS_ADMIN=$(brew --prefix)/etc
+    export SQLPATH=$HOMEBREW_PREFIX/opt/instant-client/sqlplus/admin:$HOME/local/sqlplus
+    export TNS_ADMIN=$HOMEBREW_PREFIX/etc
   fi
 fi
 
