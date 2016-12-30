@@ -82,6 +82,9 @@ defaults write com.apple.dock tilesize -integer 48
 # Finder
 # ----------------------------------------------------------------------------
 
+# Disable all window and Get Info animations (default: not set).
+defaults write com.apple.finder DisableAllAnimations -boolean true
+
 # New windows show home directory.
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
