@@ -82,12 +82,14 @@ fi
 if [[ -n $(command -v brew) ]]
 then
   HOMEBREW_PREFIX="$(brew --prefix)"
+  export HOMEBREW_NO_ANALYTICS=1
+  export HOMEBREW_NO_AUTO_UPDATE=1
   export HOMEBREW_TEMP=$TMPDIR
 
   # Homebrew's bash completion
-  if [[ -f $HOMEBREW_PREFIX/etc/bash_completion.d/brew ]]
+  if [[ -f $HOMEBREW_PREFIX/share/bash-completion/bash_completion ]]
   then
-    source $HOMEBREW_PREFIX/etc/bash_completion.d/brew
+    source $HOMEBREW_PREFIX/share/bash-completion/bash_completion
   fi
 
   # Homebrew Cask
@@ -118,4 +120,7 @@ for file in $HOME/.{bash_aliases,bash_functions,bashrc.local}
 do
   [[ -r $file ]] && [[ -f $file ]] && source $file
 done
+
+unset DEVELOPER_DIR
+unset HOMEBREW_PREFIX
 unset file
