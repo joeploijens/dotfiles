@@ -58,3 +58,6 @@ cd ~/.dotfiles/scripts
 
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
+## License
+
+Code is under the [BSD 2-clause "Simplified" License](https://github.com/joeploijens/dotfiles/blob/master/LICENSE.txt).
