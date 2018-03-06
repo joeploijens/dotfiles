@@ -16,5 +16,4 @@
 # So, typically, ~/.bash_profile would source ~/.bashrc before or after any
 # login-specific initializations.
 
-
 [[ -r ~/.bashrc ]] && source ~/.bashrc

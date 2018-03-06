@@ -1,6 +1,6 @@
 # Dotfiles
 
-My macOS configuration files and scripts.
+My macOS configuration files.
 
 ## Installation
 
@@ -12,21 +12,21 @@ The Command Line Developer Tools can be easily installed using
 `xcode-select --install`.
 
 Installing these dotfiles will overwrite already existing files in your home
-directory. The `bootstrap` script will prompt you before installing the
+directory. The `setup` script will prompt you before installing the
 dotfiles. Run the following commands to install:
 
 ```bash
 git clone https://github.com/joeploijens/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-source bootstrap
+cd ~/.dotfiles/script
+source setup
 ```
 
-To update, `cd` into your local `dotfiles` repository and run the `bootstrap`
+To update, `cd` into your local `dotfiles` repository and run the `setup`
 script again:
 
 ```bash
-cd ~/.dotfiles
-source bootstrap
+cd ~/.dotfiles/script
+source setup
 ```
 
 ## Features
@@ -42,7 +42,8 @@ brew tap homebrew/bundle
 brew bundle --global
 ```
 
-This will install all the Homebrew formulae listed in `.Brewfile`.
+This will install all the Homebrew formulae and their dependencies listed in
+`.Brewfile`.
 
 ### macOS Defaults
 
@@ -50,7 +51,7 @@ On a new Mac you may want to set some sane macOS defaults by running the
 `macos-defaults` script.
 
 ```bash
-cd ~/.dotfiles/scripts
+cd ~/.dotfiles/script
 ./macos-defaults
 ```
 

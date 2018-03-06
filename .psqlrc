@@ -1,11 +1,16 @@
 -- ~/.psqlrc
 --
--- psql(1) start-up file
+-- psql(1) start-up file.
+
+\set QUIET 1
 
 \pset null '~'
 
 \set AUTOCOMMIT off
 \set HISTCONTROL ignoreboth
+\set HISTFILE ~/.history/psql- :DBNAME
 \set PROMPT1 '(%m)%n@%/%# '
 \set PROMPT2 '> '
 \set PROMPT3 '> '
+
+\unset QUIET

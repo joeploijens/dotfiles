@@ -1,30 +1,30 @@
 # ~/.inputrc
 #
-# Readline startup file
+# Readline startup file.
 
-# Enable case-insensitive command line completion
+# Enable case-insensitive command line completion.
 set completion-ignore-case on
 
-# Do not complete hidden files unless the pattern starts with a dot
+# Do not complete hidden files unless the pattern starts with a dot.
 set match-hidden-files off
 
 # Turn off the internal pager to display a screenful of possible completions
-# at a time
+# at a time.
 set page-completions off
 
 # Immediately show all possible command line completions instead of ringing
-# the bell
+# the bell.
 set show-all-if-ambiguous on
 
-# Suffix each command line completion with a character denoting its type
+# Suffix each command line completion with a character denoting its type.
 set visible-stats on
 
 # Use the text that has already been typed as the prefix for searching through
-# the command history
+# the command history.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
-# UTF-8 support
+# UTF-8 support.
 set input-meta on
 set output-meta on
 set convert-meta off

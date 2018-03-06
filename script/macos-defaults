@@ -2,7 +2,7 @@
 #
 # macos-defaults
 #
-# Set reasonable macOS defaults.
+# Set some reasonable macOS defaults.
 #
 # Thanks to Mathias Bynens' macOS defaults script:
 # - https://github.com/mathiasbynens/dotfiles/blob/master/.macos
@@ -16,10 +16,10 @@ then
   exit 1
 fi
 
-# macOS Sierra only...
-if ! [[ $(sw_vers -productVersion) =~ ^10\.12\..+ ]]
+# macOS High Sierra only...
+if ! [[ $(sw_vers -productVersion) =~ ^10\.13\..+ ]]
 then
-  echo "$PROG script is intended for macOS versions 10.12.x"
+  echo "$PROG script is intended for macOS versions 10.13.x"
   exit 1
 fi
 
@@ -60,12 +60,6 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 
 # Disable shadows on screen captures (default: not set).
 defaults write com.apple.screencapture disable-shadow -boolean true
-
-# Dashboard
-# ----------------------------------------------------------------------------
-
-# Disable Dashboard (default: not set).
-defaults write com.apple.dashboard mcx-disabled -boolean true
 
 # Dock
 # ----------------------------------------------------------------------------
@@ -117,9 +111,9 @@ defaults write com.apple.Safari ShowStatusBar -boolean true
 
 # Add terminal profiles for the Solarized Dark and Solarized Light color
 # schemes.
-open "../terminal/Solarized Dark.terminal"
+open "../Terminal/Solarized Dark.terminal"
 sleep 1
-open "../terminal/Solarized Light.terminal"
+open "../Terminal/Solarized Light.terminal"
 sleep 1
 
 # Make Solarized Light the default terminal profile.
@@ -143,9 +137,3 @@ launchctl unload -w ~/Library/LaunchAgents/com.google.keystone.agent.plist
 
 # Don't show the Welcome window on launching the application (default: false).
 defaults write com.pixelmatorteam.pixelmator dontShowWelcomeScreen -boolean true
-
-# Tweetbot
-# ----------------------------------------------------------------------------
-
-# Bypass the annoyingly slow t.co URL shortener (default: not set).
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -boolean true

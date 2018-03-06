@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 #
-# bootstrap
+# setup
 #
 # This script will pull down the latest versions of the dotfiles and copy them
 # to your home directory.
 
 install_dotfiles() {
-  rsync -av \
+  rsync -avh \
+    --exclude ".git/" \
+    --exclude "Terminal/" \
+    --exclude "script/" \
     --exclude ".DS_Store" \
+    --exclude "LICENSE.txt" \
+    --exclude "README.md" \
+    --exclude "login.sql" \
     --no-perms \
-    --quiet \
-    ./home/ ~
+    . ~
+  source ~/.bash_profile
 }
 
 PROG=${0##*/}
@@ -20,13 +26,15 @@ command -v git >/dev/null 2>&1 || { echo "$PROG: git: command not found"; exit 1
 
 # Pull down the latest changes.
 echo "Syncing dotfiles..."
-cd "$(dirname "${BASH_SOURCE}")"
+cd "$(dirname "${BASH_SOURCE[0]}")/.." || exit
 git pull origin master
 
 # Verify that the user wants to continue before potentially overwriting files.
-read -p "This may overwrite existing files. Are you sure? (y/n) " -n 1
+read -r -p "This may overwrite existing files. Are you sure? (y/n) " -n 1
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
   install_dotfiles
-  source ~/.bash_profile
 fi
+
+unset install_dotfiles

@@ -1,5 +1,5 @@
 # ~/.bash_sessions_disable
 #
 # The presence of this file in the home directory disables the
-# shell save/restore mechanism for the Apple terminal
+# shell save/restore mechanism for the Apple Terminal.app
 # (see /etc/bashrc_Apple_Terminal).

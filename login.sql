@@ -1,6 +1,6 @@
 -- ~/login.sql
 --
--- SQL*Plus user profile file
+-- SQL*Plus user profile.
 
 define _EDITOR = vi
 
