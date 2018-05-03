@@ -9,6 +9,7 @@ install_dotfiles() {
   rsync -avh \
     --exclude ".git/" \
     --exclude "Terminal/" \
+    --exclude "etc/" \
     --exclude "script/" \
     --exclude ".DS_Store" \
     --exclude "LICENSE.txt" \
