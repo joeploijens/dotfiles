@@ -1,4 +1,4 @@
-# Solarized - macOS 10.13 Terminal.app Settings
+# Solarized - macOS 10.14 Terminal.app Settings
 
 A precision color scheme for multiple applications (terminal, vim, etc.) with
 both dark/light modes.
@@ -12,7 +12,7 @@ If you have come across the color scheme via this repository, see the link
 above to the Solarized homepage or visit the main [Solarized repository] on
 GitHub.
 
-[Solarized homepage]:   http://ethanschoonover.com/solarized
+[Solarized homepage]:   https://ethanschoonover.com/solarized
 [Solarized repository]: https://github.com/altercation/solarized
 
 ## Installation

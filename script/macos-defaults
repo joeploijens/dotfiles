@@ -16,10 +16,10 @@ then
   exit 1
 fi
 
-# macOS High Sierra only...
-if ! [[ $(sw_vers -productVersion) =~ ^10\.13\..+ ]]
+# macOS Mojave only...
+if ! [[ $(sw_vers -productVersion) =~ ^10\.14 ]]
 then
-  echo "$PROG script is intended for macOS versions 10.13.x"
+  echo "$PROG script is intended for macOS versions 10.14.x"
   exit 1
 fi
 
