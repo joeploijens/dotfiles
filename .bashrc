@@ -7,6 +7,9 @@
 # If not running interactively, don't do anything.
 [[ -z "$PS1" ]] && return
 
+# Silence warning that the default interactive shell is now zsh.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Shell Options
 # ----------------------------------------------------------------------------
 
