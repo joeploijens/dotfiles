@@ -79,8 +79,3 @@ jpg-optim() {
   [[ $# -ne 2 ]] && { echo "Usage: ${FUNCNAME[0]} input.jpg output.jpg"; return 1; }
   jpegtran -copy none -optimize -perfect -outfile "$2" "$1"
 }
-
-# Download latest stable Google Chrome.
-get-latest-google-chrome() {
-  curl -LOR https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg
-}
