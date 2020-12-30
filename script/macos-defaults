@@ -16,10 +16,10 @@ then
   exit 1
 fi
 
-# macOS Mojave only...
-if ! [[ $(sw_vers -productVersion) =~ ^10\.14 ]]
+# macOS Big Sur only...
+if ! [[ $(sw_vers -productVersion) =~ ^11\.? ]]
 then
-  echo "$PROG script is intended for macOS versions 10.14.x"
+  echo "$PROG script is intended for macOS versions 11.x"
   exit 1
 fi
 
@@ -50,10 +50,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -boolean false
 
 # Reduce transparency in macOS.
 defaults write com.apple.universalaccess reduceTransparency -boolean true
-
-# Report computer name, macOS version and IP address when clicking the clock
-# in the Login window (default: not set).
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Desktop & Screen Saver
 # ----------------------------------------------------------------------------
@@ -100,9 +96,6 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -boolean false
 # Set home page to `about:blank`.
 defaults write com.apple.Safari HomePage -string "about:blank"
 
-# Do not automatically update extensions.
-defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -boolean false
-
 # Show status bar.
 defaults write com.apple.Safari ShowStatusBar -boolean true
 
@@ -120,20 +113,11 @@ sleep 1
 defaults write com.apple.Terminal "Default Window Settings" -string "Solarized Light"
 defaults write com.apple.Terminal "Startup Window Settings" -string "Solarized Light"
 
-# Google
+# Music
 # ----------------------------------------------------------------------------
 
-# Use the macOS system-native print preview dialog (default: not set).
-defaults write com.google.Chrome DisablePrintPreview -boolean true
+# Play while converting files (default: true).
+defaults write com.apple.Music playWhileEncoding -boolean false
 
-# Disable Google Software Update from checking for updates (default: 18000).
-defaults write com.google.Keystone.Agent checkInterval 0
-
-# Disable Google Software Update agent.
-launchctl unload -w ~/Library/LaunchAgents/com.google.keystone.agent.plist
-
-# Pixelmator
-# ----------------------------------------------------------------------------
-
-# Don't show the Welcome window on launching the application (default: false).
-defaults write com.pixelmatorteam.pixelmator dontShowWelcomeScreen -boolean true
+# Preload files into memory (default: false).
+defaults write com.apple.Music preloadFilesIntoMemory -boolean true
