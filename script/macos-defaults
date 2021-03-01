@@ -54,6 +54,12 @@ defaults write com.apple.universalaccess reduceTransparency -boolean true
 # Desktop & Screen Saver
 # ----------------------------------------------------------------------------
 
+# Save screen capture in PNG format (default: nost set).
+defaults write com.apple.screencapture type -string "png"
+
+# Disable showing floating thumbnail (default: not set).
+defaults write com.apple.screencapture show-thumbnail -boolean false
+
 # Disable shadows on screen captures (default: not set).
 defaults write com.apple.screencapture disable-shadow -boolean true
 
